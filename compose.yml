@@ -1,0 +1,13 @@
+services:
+  nextjs-blog:
+    container_name: 'nextjs-blog'
+    build:
+      context: .
+    user: 1000:1000
+    stdin_open: true
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - ./source:/app
+    command: ['npm', 'run', 'dev']
